@@ -22,6 +22,10 @@ dependencies {
 	runtimeOnly 'com.h2database:h2'
 }
 
+jar {
+	archiveFileName = 'hello-spring.jar'
+}
+
 test {
 	useJUnitPlatform()
 }
