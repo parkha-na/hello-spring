@@ -19,8 +19,8 @@ class MemberServiceTest {
 
     @BeforeEach
     public void beforeEach(){
-        memberRepository=new MemoryMemberRepository();
-        memberService=new MemberService(memberRepository);
+        memberRepository = new MemoryMemberRepository();
+        memberService = new MemberService(memberRepository);
     }
     @AfterEach
     public void afterEach(){
@@ -30,7 +30,7 @@ class MemberServiceTest {
     @Test
     void 회원가입() {
         // given
-        Member member=new Member();
+        Member member = new Member();
         member.setName("hello");
 
         // when

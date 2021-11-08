@@ -18,12 +18,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @Transactional
 class MemberServiceIntegrationTest {
 
-    @Autowired MemberService memberService;
-    @Autowired MemberRepository memberRepository;
+    @Autowired
+    MemberService memberService;
+    @Autowired
+    MemberRepository memberRepository;
 //    @BeforeEach
 //    public void beforeEach(){
-//        memberRepository=new MemoryMemberRepository();
-//        memberService=new MemberService(memberRepository);
+//        memberRepository = new MemoryMemberRepository();
+//        memberService = new MemberService(memberRepository);
 //    }
 //    @AfterEach
 //    public void afterEach(){
@@ -33,7 +35,7 @@ class MemberServiceIntegrationTest {
     @Test
     void 회원가입() {
         // given
-        Member member=new Member();
+        Member member = new Member();
         member.setName("spring100");
 
         // when
@@ -55,7 +57,7 @@ class MemberServiceIntegrationTest {
 
         // when
         memberService.join(member1);
-        IllegalStateException e=assertThrows(IllegalStateException.class, () -> memberService.join(member2));
+        IllegalStateException e = assertThrows(IllegalStateException.class, () -> memberService.join(member2));
 
         assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 //        try{
@@ -64,9 +66,6 @@ class MemberServiceIntegrationTest {
 //        }catch(IllegalStateException e){
 //            assertThat(e.getMessage()).isEqualTo("이미 존재하는 회원입니다.");
 //        }
-
-
-
         // then
     }
 
